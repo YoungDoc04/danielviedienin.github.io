@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<section class="hero wrap">
+  <div class="hero__intro">
+    <p class="hero__eyebrow">Kryvyi Rih region, Ukraine</p>
+    <h1 class="hero__title">Daniel Viedienin</h1>
+    <p class="hero__lede">
+      Paramedic responding to emergencies for the Regional Center for
+      Emergency Medical Care and Disaster Medicine in Dnipropetrovsk region.
+      Medical student. Building the habit of using AI on shift, and now
+      moving that habit into HealthTech.
+    </p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">Read my story</a>
+      <a class="btn" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero__photo">
+    <img src="{{ '/assets/img/daniel-photo.jpg' | relative_url }}" alt="Portrait of Daniel Viedienin" width="480" height="600">
+  </div>
+</section>
+
+<section class="vitals wrap" aria-label="Key figures">
+  <div class="vitals__item">
+    <span class="vitals__number">1,000+</span>
+    <span class="vitals__label">Emergency calls attended</span>
+  </div>
+  <div class="vitals__item">
+    <span class="vitals__number">3.5 yrs</span>
+    <span class="vitals__label">Frontline EMS experience</span>
+  </div>
+  <div class="vitals__item">
+    <span class="vitals__number">AI</span>
+    <span class="vitals__label">ChatGPT built into daily triage and documentation</span>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2>What I bring</h2>
+  <ul class="tag-list">
+    <li>Emergency and prehospital patient care</li>
+    <li>Rapid triage and clinical assessment</li>
+    <li>Clinical documentation</li>
+    <li>AI-assisted diagnostics and charting</li>
+    <li>B2B sales, veterinary pharmaceuticals</li>
+    <li>Working calmly under pressure</li>
+  </ul>
+</section>
+
+<section class="wrap section blog-teaser">
+  <div class="section__head">
+    <h2>From the blog</h2>
+    <a href="{{ '/blog/' | relative_url }}">All posts</a>
+  </div>
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li class="post-list__item">
+      <a class="post-list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <p class="post-list__excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </li>
+    {% else %}
+    <li class="post-list__empty">New posts will show up here as soon as they're published.</li>
+    {% endfor %}
+  </ul>
+</section>

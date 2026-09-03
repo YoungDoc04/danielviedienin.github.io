@@ -1,0 +1,42 @@
+# Site settings
+title: "Daniel Viedienin"
+tagline: "Paramedic — Med Student — HealthTech"
+description: >-
+  Personal site and blog of Daniel Viedienin: paramedic with 3+ years of
+  frontline emergency care experience, medical student, and builder at the
+  intersection of prehospital medicine and AI.
+author: "Daniel Viedienin"
+email: "your-email@example.com"          # TODO: replace with your real email
+linkedin_url: "https://www.linkedin.com/in/your-profile"   # TODO: replace with your LinkedIn URL
+url: "https://danielviedienin.com"       # production domain (CNAME below)
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="post wrap section">
+  <p class="post__meta">
+    Posted {{ page.date | date: "%B %-d, %Y" }}.
+    {% assign words = content | strip_html | number_of_words %}
+    {% assign minutes = words | divided_by: 200 | at_least: 1 %}
+    About {{ minutes }} min to read.
+  </p>
+  <h1 class="post__title">{{ page.title }}</h1>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+
+<nav class="post-nav wrap">
+  <a href="{{ '/blog/' | relative_url }}">Back to all posts</a>
+</nav>
