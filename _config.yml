@@ -6,8 +6,8 @@ description: >-
   frontline emergency care experience, medical student, and builder at the
   intersection of prehospital medicine and AI.
 author: "Daniel Viedienin"
-email: "your-email@example.com"          # TODO: replace with your real email
-linkedin_url: "https://www.linkedin.com/in/your-profile"   # TODO: replace with your LinkedIn URL
+email: "youngdoc@ukr.net"          # TODO: replace with your real email
+linkedin_url: "https://www.linkedin.com/in/daniel-viedienin"   # TODO: replace with your LinkedIn URL
 url: "https://danielviedienin.com"       # production domain (CNAME below)
 baseurl: ""
 
