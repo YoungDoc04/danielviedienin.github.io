@@ -1,0 +1,47 @@
+en:
+  name: "Daniel Viedienin"
+  role: "Paramedic · Medical Student · AI in Emergency Medicine"
+  menu_label: "Menu"
+  skip_link: "Skip to content"
+  nav:
+    home: "Home"
+    about: "About"
+    cv: "Resume (CV)"
+    offer: "What I Offer"
+    blog: "Blog"
+    contact: "Contact"
+  footer:
+    copyright: "© 2026 Daniel Viedienin. Built with Jekyll & Netlify."
+    cat: "cat"
+
+ua:
+  name: "Данило Вєдєнін"
+  role: "Парамедик · Студент-медик · ШІ в екстреній медицині"
+  menu_label: "Меню"
+  skip_link: "Перейти до змісту"
+  nav:
+    home: "Головна"
+    about: "Про мене"
+    cv: "Резюме (CV)"
+    offer: "Пропозиція"
+    blog: "Блог"
+    contact: "Контакти"
+  footer:
+    copyright: "© 2026 Данило Вєдєнін. Built with Jekyll & Netlify."
+    cat: "кіт"
+
+ru:
+  name: "Данил Веденин"
+  role: "Парамедик · Студент-медик · ИИ в экстренной медицине"
+  menu_label: "Меню"
+  skip_link: "Перейти к содержимому"
+  nav:
+    home: "Главная"
+    about: "Обо мне"
+    cv: "Резюме (CV)"
+    offer: "Предложение"
+    blog: "Блог"
+    contact: "Контакты"
+  footer:
+    copyright: "© 2026 Данил Веденин. Built with Jekyll & Netlify."
+    cat: "кот"

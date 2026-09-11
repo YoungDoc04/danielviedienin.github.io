@@ -1,22 +1,26 @@
 <header class="site-header">
-  <div class="wrap site-header__row">
-    <a class="site-header__id" href="{{ '/' | relative_url }}">
-      <span class="site-header__name">Daniel Viedienin</span>
-      <span class="site-header__role">Paramedic building toward HealthTech</span>
-    </a>
+  <div class="site-header__inner">
+    <div class="site-header__identity">
+      <a href="/{{ page.lang }}/">
+        <span class="site-header__name">{{ site.data.translations[page.lang].name }}</span>
+      </a>
+      <span class="site-header__role">{{ site.data.translations[page.lang].role }}</span>
+    </div>
 
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="sr-only">Menu</span>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="{{ site.data.translations[page.lang].menu_label }}">
+      <span></span><span></span><span></span>
     </button>
 
-    <nav class="site-nav" id="site-nav">
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
-      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a>
-      <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
-    </nav>
+    <div class="site-header__right" id="site-nav-panel">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/{{ page.lang }}/"{% if page.nav == "home" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.home }}</a>
+        <a href="/{{ page.lang }}/about/"{% if page.nav == "about" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.about }}</a>
+        <a href="/{{ page.lang }}/cv/"{% if page.nav == "cv" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.cv }}</a>
+        <a href="/{{ page.lang }}/offer/"{% if page.nav == "offer" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.offer }}</a>
+        <a href="/{{ page.lang }}/blog/"{% if page.nav == "blog" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.blog }}</a>
+        <a href="/{{ page.lang }}/contact/"{% if page.nav == "contact" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.contact }}</a>
+      </nav>
+      {% include lang-switcher.html %}
+    </div>
   </div>
 </header>

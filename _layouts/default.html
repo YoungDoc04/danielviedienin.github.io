@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html lang="{{ page.lang | default: site.default_lang }}">
 {% include head.html %}
-</head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  {% include header.html %}
-  <main id="main">
-    {{ content }}
-  </main>
-  {% include footer.html %}
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<a class="skip-link" href="#main">{{ site.data.translations[page.lang].skip_link }}</a>
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

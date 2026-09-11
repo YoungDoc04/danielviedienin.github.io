@@ -1,0 +1,5 @@
+/               /en/            302
+/uk/*           /ua/:splat      301
+/en             /en/            301
+/ua             /ua/            301
+/ru             /ru/            301

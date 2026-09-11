@@ -1,0 +1,3 @@
+<div class="lang-switch" role="group" aria-label="Language / Мова / Язык">
+  {% for lang in site.languages %}{% unless forloop.first %}<span class="lang-switch__sep">/</span>{% endunless %}<button type="button" data-lang-switch="{{ lang }}"{% if page.lang == lang %} aria-current="true"{% endif %}>{{ lang | upcase }}</button>{% endfor %}
+</div>

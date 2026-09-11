@@ -1,0 +1,18 @@
+---
+layout: page
+lang: ua
+nav: home
+permalink: /ua/cat/
+title: "ДВ | кіт Тузік"
+description: "Ти знайшов секрет."
+noindex: true
+---
+
+<div class="cat-page">
+<img src="/assets/img/cat.jpg" alt="Кіт Тузік">
+
+## Ти знайшов секрет.
+
+Це Тузік. Він не рятує життя, не пише код і не продає софт. Але саме він нагадує, що навіть у найсерйознішій роботі має бути місце чомусь теплому.
+
+</div>

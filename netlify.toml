@@ -1,0 +1,10 @@
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2.2"
+  JEKYLL_ENV = "production"
+
+# All redirect / rewrite rules live in `_redirects` (see that file) so
+# there is exactly one place that defines routing behaviour.

@@ -1,12 +1,57 @@
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
-<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-<link rel="icon" href="data:,">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+{% if page.noindex %}<meta name="robots" content="noindex,follow">{% endif %}
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+{% include favicon.html %}
+<link rel="stylesheet" href="/assets/css/style.css">
+
 {% seo %}
+{% feed_meta %}
+
+{% unless page.collection %}
+{% assign path_no_lang = page.url | remove_first: "/en/" | remove_first: "/ua/" | remove_first: "/ru/" %}
+{% for lang in site.languages %}
+<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}/{{ lang }}/{{ path_no_lang }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}/en/{{ path_no_lang }}">
+{% endunless %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniel Viedienin",
+  "alternateName": ["Данило Вєдєнін", "Данил Веденин"],
+  "jobTitle": "Paramedic",
+  "description": "Paramedic and medical student moving into HealthTech.",
+  "url": "{{ site.url }}/en/",
+  "email": "mailto:{{ site.email }}",
+  "sameAs": [
+    "{{ site.social.linkedin }}",
+    "{{ site.social.telegram }}"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kryvyi Rih",
+    "addressRegion": "Dnipropetrovsk Oblast",
+    "addressCountry": "UA"
+  }
+}
+</script>
+
+<!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID, then uncomment.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+</head>

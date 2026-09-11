@@ -1,26 +1,47 @@
-# Site settings
+# ------------------------------------------------------------
+# danielviedienin.com — Jekyll configuration
+# ------------------------------------------------------------
+
 title: "Daniel Viedienin"
-tagline: "Paramedic — Med Student — HealthTech"
+email: youngdoc@ukr.net
 description: >-
-  Personal site and blog of Daniel Viedienin: paramedic with 3+ years of
-  frontline emergency care experience, medical student, and builder at the
-  intersection of prehospital medicine and AI.
-author: "Daniel Viedienin"
-email: "youngdoc@ukr.net"          # TODO: replace with your real email
-linkedin_url: "https://www.linkedin.com/in/daniel-viedienin"   # TODO: replace with your LinkedIn URL
-url: "https://danielviedienin.com"       # production domain (CNAME below)
+  Paramedic and medical student moving into HealthTech — emergency medicine,
+  AI-assisted practice, and B2B sales experience.
+url: "https://danielviedienin.com"
 baseurl: ""
 
-# Build settings
+# ---- Multilingual settings -----------------------------------
+# Manual i18n: page.lang + _data/translations.yml + one folder per
+# language (/en/, /ua/, /ru/). See README "Multilingual setup" for
+# why this project does not lean on jekyll-multiple-languages-plugin's
+# own tags even though the gem is included below.
+languages: ["en", "ua", "ru"]
+default_lang: "en"
+
+author:
+  name: "Daniel Viedienin"
+  email: youngdoc@ukr.net
+
+social:
+  linkedin: "https://www.linkedin.com/in/daniel-viedienin"
+  telegram: "https://t.me/spittinfax"
+  telegram_handle: "t.me/spittinfax"
+
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+# ---- Permalinks -------------------------------------------------
+# Applies to the built-in `posts` collection (long-form Articles).
 permalink: /blog/:year/:month/:day/:title/
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+collections:
+  notes:
+    output: true
+    permalink: /notes/:year/:month/:day/:title/
 
 defaults:
   - scope:
@@ -30,13 +51,34 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "pages"
+      type: "notes"
     values:
-      layout: "page"
+      layout: "note"
+
+# ---- Plugins ------------------------------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-multiple-languages-plugin
+
+# ---- Build ----------------------------------------------------
+# Force-include files that Jekyll would otherwise skip (dotfiles /
+# files with no front matter) so Netlify gets them in `_site`.
+include:
+  - CNAME
+  - _redirects
+  - robots.txt
 
 exclude:
+  - vendor
+  - node_modules
   - Gemfile
   - Gemfile.lock
+  - netlify.toml
   - README.md
-  - node_modules
-  - vendor
+  - "*.gemspec"
+  - "*.gemfile"
+
+sass:
+  style: compressed

@@ -1,14 +1,14 @@
 <footer class="site-footer">
-  <div class="wrap site-footer__row">
-    <p class="site-footer__note">
-      Daniel Viedienin — paramedic and medical student working on the
-      frontline of emergency care, moving toward HealthTech.
-    </p>
+  <div class="site-footer__inner">
+    <span>{{ site.data.translations[page.lang].footer.copyright }}</span>
     <div class="site-footer__links">
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="{{ site.social.telegram }}" target="_blank" rel="noopener">Telegram</a>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a class="site-footer__cat" href="/{{ page.lang }}/cat/">{{ site.data.translations[page.lang].footer.cat }}</a>
     </div>
-    <p class="site-footer__copy">&copy; {{ site.time | date: '%Y' }} Daniel Viedienin.</p>
+  </div>
+  <div class="site-footer__bottom">
+    {% include lang-switcher.html %}
   </div>
 </footer>
