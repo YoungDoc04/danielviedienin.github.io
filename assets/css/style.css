@@ -17,8 +17,8 @@
   --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --content-width: 880px;
-  --header-height: 76px;
+  --content-width: 1100px;
+  --header-height: 96px;
 }
 
 * { box-sizing: border-box; }
@@ -30,7 +30,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,6 +57,37 @@ hr {
 }
 
 ::selection { background: var(--color-accent); color: var(--color-bg); }
+
+/* ---------------------------------------------------------
+   Fixed background illustration (stars / lighthouse / sea)
+   Stays in place while the page scrolls; kept very faint so it
+   never competes with content. Swapped for a portrait
+   composition on narrow screens.
+   --------------------------------------------------------- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.site-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08;
+  display: none;
+}
+.site-bg__img--desktop { display: block; }
+@media (max-width: 760px) {
+  .site-bg__img--desktop { display: none; }
+  .site-bg__img--mobile { display: block; }
+}
+
+#main, .site-footer {
+  position: relative;
+  z-index: 1;
+}
 
 .container {
   max-width: var(--content-width);
@@ -139,23 +170,23 @@ hr {
 .site-header__identity {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+  flex: 1 1 auto;
   min-width: 0;
 }
 .site-header__identity a { color: var(--color-text); }
 .site-header__identity a:hover { text-decoration: none; }
 .site-header__name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 .site-header__role {
-  font-size: 0.78rem;
+  font-size: 0.95rem;
   color: var(--color-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
+  white-space: normal;
 }
 
 .site-header__right { display: flex; align-items: center; gap: 22px; }
@@ -230,6 +261,8 @@ hr {
   }
   .site-nav { flex-direction: column; align-items: flex-start; gap: 14px; }
   .burger { display: flex; }
+  .site-header__name { font-size: 1.2rem; }
+  .site-header__role { font-size: 0.78rem; }
 }
 
 /* ==========================================================
@@ -275,9 +308,9 @@ hr {
   margin: 0 auto;
   padding: 56px 24px 40px;
 }
-.page-content h1 { font-size: 1.9rem; margin-bottom: 0.9em; }
-.page-content h2 { font-size: 1.3rem; }
-.page-content > p:first-of-type { font-size: 1.05rem; }
+.page-content h1 { font-size: 2.1rem; margin-bottom: 0.9em; }
+.page-content h2 { font-size: 1.55rem; }
+.page-content > p:first-of-type { font-size: 1.1rem; }
 .page-content ul, .page-content ol { padding-left: 1.3em; }
 .page-content li { margin-bottom: 0.4em; }
 
@@ -343,28 +376,30 @@ hr {
   padding: 0 24px;
 }
 .vitals__item {
-  text-align: center;
-  padding: 28px 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 12px;
   border-left: 1px solid var(--color-line);
 }
 .vitals__item:first-child { border-left: none; }
 .vitals__number {
-  display: block;
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--color-accent);
-  line-height: 1.1;
+  line-height: 1;
 }
 .vitals__label {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.82rem;
-  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text);
 }
 @media (max-width: 760px) {
   .vitals__row { grid-template-columns: 1fr; }
-  .vitals__item { border-left: none; border-top: 1px solid var(--color-line); padding: 20px 12px; }
+  .vitals__item { border-left: none; border-top: 1px solid var(--color-line); padding: 14px 12px; }
   .vitals__item:first-child { border-top: none; }
 }
 
@@ -376,14 +411,15 @@ hr {
   border-top: 1px solid var(--color-line);
 }
 .home-block__title {
-  font-size: 0.8rem;
-  letter-spacing: 0.09em;
+  font-size: 1.4rem;
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.9em;
+  margin-bottom: 0.6em;
 }
-.home-block p { color: var(--color-body); }
+.home-block p { color: var(--color-body); font-size: 1.08rem; }
 
 .home-cta {
   max-width: var(--content-width);
@@ -403,26 +439,28 @@ hr {
   padding: 40px 24px;
   border-top: 1px solid var(--color-line);
 }
-.about-block:first-child { border-top: none; padding-top: 52px; }
+.about-block:first-child { border-top: none; padding-top: 18px; }
 
 .about-block.intro .hook {
   font-style: italic;
   color: var(--color-accent);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin-bottom: 1.4em;
 }
 
 .about-block.flame .lead {
   font-weight: 700;
   color: var(--color-accent);
+  font-size: 1.08rem;
 }
-.about-block.flame p { color: var(--color-body); }
+.about-block.flame p { color: var(--color-body); font-size: 1.08rem; }
 
 .about-block.steel .lead {
   font-weight: 700;
   color: var(--color-link);
+  font-size: 1.08rem;
 }
-.about-block.steel p { color: var(--color-body); }
+.about-block.steel p { color: var(--color-body); font-size: 1.08rem; }
 
 .about-block.cta-block {
   background: var(--color-text);
@@ -519,6 +557,7 @@ hr {
   color: var(--color-accent);
 }
 .cv-list .num { color: var(--color-accent); font-weight: 600; }
+.cv-note { font-size: 0.9rem; color: var(--color-body); margin: 10px 0 0; }
 
 .cv-edu { margin-bottom: 20px; }
 .cv-edu:last-child { margin-bottom: 0; }
@@ -561,8 +600,8 @@ hr {
   border-top: 1px solid var(--color-line);
 }
 .role-block:first-child { border-top: none; }
-.role-block h2 { font-size: 1.25rem; }
-.role-block p { color: var(--color-body); }
+.role-block h2 { font-size: 1.45rem; }
+.role-block p { color: var(--color-body); font-size: 1.05rem; }
 .role-block h3 {
   font-family: var(--font-sans);
   font-size: 0.88rem;

@@ -16,7 +16,7 @@ description: "From emergency medicine to HealthTech: why Daniel Viedienin is mak
 <section class="about-block flame">
   <h2>EMERGENCY MEDICINE</h2>
   <p class="lead">Over 3+ years – more than 4,000 emergency responses.</p>
-  <p>Hundreds of 24-hour shifts, thousands of patients, countless scenarios that aren't taught in textbooks. This isn't just a "job." I have to make decisions where the cost of a mistake is someone's life.</p>
+  <p>Hundreds of 24-hour shifts, thousands of patients, countless scenarios that aren't taught in textbooks. This isn't just a "job". I have to make decisions where the cost of a mistake can be someone's life.</p>
   <p class="lead">In critical situations, there is no time for panic. Only maintaining composure and a clear sequence of actions.</p>
 </section>
 

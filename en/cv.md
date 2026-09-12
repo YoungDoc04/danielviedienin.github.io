@@ -57,8 +57,8 @@ description: "Daniel Viedienin's resume: 3+ years and 4,000+ EMS calls, B2B sale
       <li>Built trust-based relationships with veterinarians by offering clinical insights, not just product pitches.</li>
       <li>Managed CRM records and tracked sales performance.</li>
       <li>Delivered consistent results in a competitive market.</li>
-      <li>Left the position after the company shifted its focus from product value to formal reporting – a direction that no longer aligned with my professional standards.</li>
     </ul>
+    <p class="cv-note">Left the position after the company shifted its focus from product value to formal reporting – a direction that no longer aligned with my professional standards.</p>
   </div>
 </section>
 
@@ -129,7 +129,7 @@ description: "Daniel Viedienin's resume: 3+ years and 4,000+ EMS calls, B2B sale
         <span class="cv-tag">Public speaking &amp; team training</span>
         <span class="cv-tag">Medical writing &amp; documentation</span>
       </div>
-      <p class="cv-skills-lang">English (B1, progressing to B2; + medical terminology) · Ukrainian (native) · Russian (fluent)</p>
+      <p class="cv-skills-lang">English (B2, progressing to C1; + medical terminology) · Ukrainian (native) · Russian (fluent)</p>
     </div>
     <div>
       <div class="cv-skills__col-title">Soft Skills</div>
@@ -151,7 +151,7 @@ description: "Daniel Viedienin's resume: 3+ years and 4,000+ EMS calls, B2B sale
 <section class="cv-section">
   <h2 class="cv-section__title">Key Achievements</h2>
   <ul class="cv-list">
-    <li><span class="num">4000+</span> emergency calls – provided pre-hospital care in high-acuity cases: cardiac arrests, polytrauma, strokes, and complex emergency conditions.</li>
+    <li><span class="num">4000+</span> emergency calls – provided pre-hospital care in highest-priority cases: heart attacks, polytrauma, strokes, and various other emergency conditions.</li>
     <li><span class="num">30%</span> reduction in documentation time – implemented AI-assisted documentation, allowing more time for direct patient care.</li>
     <li>Developed <span class="num">50+</span> custom clinical prompts – built a structured prompt library for differential diagnostics, status localis, and scenario-based protocols, now used as a personal decision-support tool.</li>
     <li>Maintained <span class="num">100%</span> EHR compliance – consistently met all electronic health record and reporting standards across shifts.</li>

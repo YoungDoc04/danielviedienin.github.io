@@ -13,6 +13,6 @@ noindex: true
 
 ## You found the secret.
 
-This is Tuzik. He doesn't save lives, doesn't write code, and doesn't sell software. But he reminds us that even in the most serious work, there should be room for something warm.
+This is Tuzik. He reminds us that even in the most serious work, there should be room for something warm.
 
 </div>

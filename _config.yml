@@ -12,9 +12,9 @@ baseurl: ""
 
 # ---- Multilingual settings -----------------------------------
 # Manual i18n: page.lang + _data/translations.yml + one folder per
-# language (/en/, /ua/, /ru/). See README "Multilingual setup" for
-# why this project does not lean on jekyll-multiple-languages-plugin's
-# own tags even though the gem is included below.
+# language (/en/, /ua/, /ru/). No third-party i18n gem is used —
+# it isn't needed for this setup and was dropped after an earlier
+# build failure.
 languages: ["en", "ua", "ru"]
 default_lang: "en"
 
@@ -60,7 +60,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-multiple-languages-plugin
 
 # ---- Build ----------------------------------------------------
 # Force-include files that Jekyll would otherwise skip (dotfiles /
