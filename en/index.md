@@ -5,7 +5,7 @@ nav: home
 permalink: /en/
 title: "Daniel Viedienin | Home"
 description: "Paramedic with 3+ years and 4,000+ emergency calls, moving into HealthTech. AI-assisted practice, B2B sales background."
-photo: /assets/img/daniel-photo.svg
+photo: /assets/img/daniel-photo.jpg
 display_name: "Daniel Viedienin"
 hero_text: "Working in the emergency medical service taught me to make optimal decisions under pressure. I also know how to engage reluctant listeners – from patients to clinicians. With my B2B sales experience, I bridge the gap between your product and real clinical practice."
 vitals:

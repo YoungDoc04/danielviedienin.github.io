@@ -1,7 +1,0 @@
-<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photo placeholder">
-  <rect width="220" height="220" fill="#faf9f6"/>
-  <rect x="0.5" y="0.5" width="219" height="219" fill="none" stroke="#d9d6cd" stroke-width="1"/>
-  <circle cx="110" cy="88" r="34" fill="none" stroke="#d9d6cd" stroke-width="2"/>
-  <path d="M52 190c6-38 34-62 58-62s52 24 58 62" fill="none" stroke="#d9d6cd" stroke-width="2"/>
-  <line x1="30" y1="205" x2="190" y2="205" stroke="#d9d6cd" stroke-width="1"/>
-</svg>
