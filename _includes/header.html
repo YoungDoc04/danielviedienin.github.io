@@ -7,10 +7,6 @@
       <span class="site-header__role">{{ site.data.translations[page.lang].role }}</span>
     </div>
 
-    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="{{ site.data.translations[page.lang].menu_label }}">
-      <span></span><span></span><span></span>
-    </button>
-
     <div class="site-header__right" id="site-nav-panel">
       <nav class="site-nav" aria-label="Primary">
         <a href="/{{ page.lang }}/"{% if page.nav == "home" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.home }}</a>
@@ -20,7 +16,14 @@
         <a href="/{{ page.lang }}/blog/"{% if page.nav == "blog" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.blog }}</a>
         <a href="/{{ page.lang }}/contact/"{% if page.nav == "contact" %} class="is-active"{% endif %}>{{ site.data.translations[page.lang].nav.contact }}</a>
       </nav>
+    </div>
+
+    <div class="lang-switch-box">
       {% include lang-switcher.html %}
     </div>
+
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="{{ site.data.translations[page.lang].menu_label }}">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>

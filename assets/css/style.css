@@ -161,7 +161,6 @@ hr {
   padding: 14px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   min-height: var(--header-height);
 }
@@ -187,7 +186,7 @@ hr {
   white-space: normal;
 }
 
-.site-header__right { display: flex; align-items: center; gap: 22px; }
+.site-header__right { display: flex; align-items: center; gap: 22px; order: 1; margin-left: auto; }
 
 .site-nav { display: flex; align-items: center; gap: 20px; }
 .site-nav a {
@@ -198,6 +197,12 @@ hr {
 .site-nav a:hover { color: var(--color-accent); text-decoration: none; }
 .site-nav a.is-active { color: var(--color-accent); }
 
+.lang-switch-box {
+  order: 2;
+  margin-left: 28px;
+  border: 1px solid var(--color-line);
+  padding: 6px 14px;
+}
 .lang-switch { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
 .lang-switch button {
   font-family: var(--font-sans);
@@ -216,6 +221,7 @@ hr {
 .lang-switch__sep { color: var(--color-line); }
 
 .burger {
+  order: 3;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -259,6 +265,7 @@ hr {
   }
   .site-nav { flex-direction: column; align-items: flex-start; gap: 14px; }
   .burger { display: flex; }
+  .lang-switch-box { margin-left: auto; padding: 5px 10px; }
   .site-header__name { font-size: 1.2rem; }
   .site-header__role { font-size: 0.78rem; }
 }
@@ -333,13 +340,13 @@ hr {
   gap: 48px;
 }
 .hero__photo {
-  flex: 0 0 220px;
-  width: 220px;
-  height: 220px;
+  flex: 0 0 260px;
+  width: 260px;
+  height: 340px;
   border: 1px solid var(--color-line);
   overflow: hidden;
 }
-.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
 .hero__body { flex: 1; min-width: 0; }
 .hero__name {
   font-family: var(--font-serif);
@@ -356,7 +363,7 @@ hr {
 
 @media (max-width: 760px) {
   .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding-top: 32px; }
-  .hero__photo { flex-basis: auto; width: 140px; height: 140px; align-self: center; }
+  .hero__photo { flex-basis: auto; width: 190px; height: 250px; align-self: center; }
   .hero__name { text-align: center; width: 100%; }
   .hero__headline { font-size: 1.05rem; }
 }
