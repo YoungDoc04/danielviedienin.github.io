@@ -20,8 +20,8 @@ description: "Свяжитесь с Данилом Ведениным — email,
 
 ### Написать сообщение
 
-<form name="contact" method="POST" data-netlify="true" action="/ru/thank-you/" class="contact-form">
-  <input type="hidden" name="form-name" value="contact">
+<form name="contact-ru" method="POST" data-netlify="true" action="/ru/thank-you/" class="contact-form">
+  <input type="hidden" name="form-name" value="contact-ru">
   <p>
     <label for="name-ru">Ваше имя:</label>
     <input type="text" name="name" id="name-ru" required>

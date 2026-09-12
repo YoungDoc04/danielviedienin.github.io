@@ -8,7 +8,7 @@ description: "You found the secret."
 noindex: true
 ---
 
-<div class="cat-page">
+<div class="cat-page" markdown="1">
 <img src="/assets/img/cat.jpg" alt="Tuzik the Cat">
 
 ## You found the secret.

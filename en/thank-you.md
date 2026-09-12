@@ -8,7 +8,7 @@ description: "Thanks for reaching out."
 noindex: true
 ---
 
-<div class="thank-you">
+<div class="thank-you" markdown="1">
 
 ## Thank you for reaching out
 

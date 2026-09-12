@@ -20,8 +20,8 @@ description: "Звʼяжіться з Данилом Вєдєніним — emai
 
 ### Надіслати повідомлення
 
-<form name="contact" method="POST" data-netlify="true" action="/ua/thank-you/" class="contact-form">
-  <input type="hidden" name="form-name" value="contact">
+<form name="contact-ua" method="POST" data-netlify="true" action="/ua/thank-you/" class="contact-form">
+  <input type="hidden" name="form-name" value="contact-ua">
   <p>
     <label for="name-ua">Ваше ім'я:</label>
     <input type="text" name="name" id="name-ua" required>

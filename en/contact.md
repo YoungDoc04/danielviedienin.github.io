@@ -20,8 +20,8 @@ If you're building in HealthTech, hiring, or just want to compare notes on AI in
 
 ### Send a Message
 
-<form name="contact" method="POST" data-netlify="true" action="/en/thank-you/" class="contact-form">
-  <input type="hidden" name="form-name" value="contact">
+<form name="contact-en" method="POST" data-netlify="true" action="/en/thank-you/" class="contact-form">
+  <input type="hidden" name="form-name" value="contact-en">
   <p>
     <label for="name-en">Your Name:</label>
     <input type="text" name="name" id="name-en" required>

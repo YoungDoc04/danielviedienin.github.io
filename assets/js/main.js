@@ -51,4 +51,20 @@
       window.location.href = target + window.location.search + window.location.hash;
     });
   });
+  /* ---- Auto-growing message field ----
+     Grows to fit what's typed, shrinks back down as text is removed,
+     but never below the CSS min-height floor (~2 lines). Manual
+     dragging via the native resize handle still works independently —
+     this only reacts to typing. */
+  document.querySelectorAll(".contact-form textarea").forEach(function (ta) {
+    var floor = ta.clientHeight;
+
+    function fit() {
+      ta.style.height = "auto";
+      ta.style.height = Math.max(ta.scrollHeight, floor) + "px";
+    }
+
+    ta.addEventListener("input", fit);
+    fit();
+  });
 })();

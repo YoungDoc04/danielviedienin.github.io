@@ -8,7 +8,7 @@ description: "Спасибо, что написали."
 noindex: true
 ---
 
-<div class="thank-you">
+<div class="thank-you" markdown="1">
 
 ## Спасибо, что написали
 
