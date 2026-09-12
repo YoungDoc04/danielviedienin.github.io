@@ -76,7 +76,7 @@ hr {
   height: 100%;
   object-fit: cover;
   object-position: right center;
-  opacity: 0.09;
+  opacity: 0.12;
 }
 @media (max-width: 760px) {
   .site-bg__img { object-position: 78% 40%; }
