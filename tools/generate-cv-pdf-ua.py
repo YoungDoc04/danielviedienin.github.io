@@ -67,8 +67,11 @@ def bullets(items):
     )
 
 BG_IMAGE = "pdf-bg-faded.jpg"
+BG_IMG_W, BG_IMG_H = 1700, 786
 PHOTO_IMAGE = "pdf-photo.jpg"
 PAGE_W, PAGE_H = A4
+BG_DRAW_W = PAGE_W
+BG_DRAW_H = BG_DRAW_W * (BG_IMG_H / BG_IMG_W)
 PHOTO_W = 30*mm
 PHOTO_H = PHOTO_W / (520/680)
 PHOTO_X = PAGE_W - 18*mm - PHOTO_W
@@ -76,7 +79,7 @@ PHOTO_Y = PAGE_H - 14*mm - PHOTO_H
 
 def draw_bg(canvas, doc):
     canvas.saveState()
-    canvas.drawImage(BG_IMAGE, 0, 0, width=PAGE_W, height=PAGE_H)
+    canvas.drawImage(BG_IMAGE, 0, 0, width=BG_DRAW_W, height=BG_DRAW_H)
     canvas.restoreState()
 
 def draw_first_page(canvas, doc):
@@ -95,7 +98,7 @@ doc = SimpleDocTemplate(
 story = []
 story.append(Paragraph("Данило Вєдєнін", name_style))
 story.append(Paragraph("Парамедик &middot; Студент-медик &middot; ШІ в екстреній медицині", role_style))
-story.append(Paragraph("Бажаєш дізнатись більше? Мій сайт-візитівка: DanielViedienin.com", cta_style))
+story.append(Paragraph('Бажаєш дізнатись більше? Мій сайт-візитівка: <a href="https://danielviedienin.com" color="#1f6f5c">DanielViedienin.com</a>', cta_style))
 story.append(hr())
 
 story.append(Paragraph(
