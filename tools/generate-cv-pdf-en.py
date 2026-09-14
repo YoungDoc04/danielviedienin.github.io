@@ -8,6 +8,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_LEFT, TA_RIGHT
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.utils import ImageReader
 
 SERIF = "fonts/IBMPlexSerif-Regular.ttf"
 SERIF_B = "fonts/IBMPlexSerif-Bold.ttf"
@@ -29,7 +30,8 @@ LINK = colors.HexColor("#1f6f5c")
 styles = getSampleStyleSheet()
 
 name_style = ParagraphStyle("name", fontName="PlexSerif-Bold", fontSize=20, leading=23, textColor=TEXT, spaceAfter=2)
-role_style = ParagraphStyle("role", fontName="Sans", fontSize=10, leading=13, textColor=MUTED, spaceAfter=8)
+role_style = ParagraphStyle("role", fontName="Sans", fontSize=10, leading=13, textColor=MUTED, spaceAfter=6)
+cta_style = ParagraphStyle("cta", fontName="Sans-Bold", fontSize=10.5, leading=13, textColor=LINK, spaceAfter=8)
 section_style = ParagraphStyle("section", fontName="PlexSerif", fontSize=12.5, leading=15, textColor=TEXT, spaceBefore=8, spaceAfter=4)
 contact_style = ParagraphStyle("contact", fontName="Sans", fontSize=9.2, textColor=BODY, leading=13)
 body_style = ParagraphStyle("body", fontName="Sans", fontSize=9.2, textColor=BODY, leading=12.8, spaceAfter=3)
@@ -47,7 +49,7 @@ def hr():
 
 def section_row(title_text, date_text):
     t = Table([[Paragraph(title_text, entry_title), Paragraph(date_text, entry_date)]],
-               colWidths=[130*mm, 40*mm])
+               colWidths=[100*mm, 33*mm])
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "BOTTOM"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
@@ -64,16 +66,36 @@ def bullets(items):
         leftIndent=12, spaceBefore=1, spaceAfter=5,
     )
 
+BG_IMAGE = "pdf-bg-faded.jpg"
+PHOTO_IMAGE = "pdf-photo.jpg"
+PAGE_W, PAGE_H = A4
+PHOTO_W = 30*mm
+PHOTO_H = PHOTO_W / (520/680)
+PHOTO_X = PAGE_W - 18*mm - PHOTO_W
+PHOTO_Y = PAGE_H - 14*mm - PHOTO_H
+
+def draw_bg(canvas, doc):
+    canvas.saveState()
+    canvas.drawImage(BG_IMAGE, 0, 0, width=PAGE_W, height=PAGE_H)
+    canvas.restoreState()
+
+def draw_first_page(canvas, doc):
+    draw_bg(canvas, doc)
+    canvas.saveState()
+    canvas.drawImage(PHOTO_IMAGE, PHOTO_X, PHOTO_Y, width=PHOTO_W, height=PHOTO_H)
+    canvas.restoreState()
+
 doc = SimpleDocTemplate(
     "../assets/files/CV-Daniel-Viedienin-EN.pdf",
     pagesize=A4,
-    topMargin=14*mm, bottomMargin=13*mm, leftMargin=18*mm, rightMargin=18*mm,
+    topMargin=14*mm, bottomMargin=13*mm, leftMargin=18*mm, rightMargin=55*mm,
     title="Daniel Viedienin - Resume (CV)", author="Daniel Viedienin",
 )
 
 story = []
 story.append(Paragraph("Daniel Viedienin", name_style))
 story.append(Paragraph("Paramedic &middot; Medical Student &middot; AI in Emergency Medicine", role_style))
+story.append(Paragraph("Want to know more? My personal website: DanielViedienin.com", cta_style))
 story.append(hr())
 
 story.append(Paragraph(
@@ -191,5 +213,5 @@ story.append(bullets([
     "adoption in pre-hospital care.",
 ]))
 
-doc.build(story)
+doc.build(story, onFirstPage=draw_first_page, onLaterPages=draw_bg)
 print("PDF written")
