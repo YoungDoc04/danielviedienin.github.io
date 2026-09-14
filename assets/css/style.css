@@ -504,12 +504,13 @@ hr {
 .cv-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   flex-wrap: wrap;
   padding-bottom: 24px;
 }
 .cv-header h1 { margin: 0; }
+.cv-header__buttons, .btn-stack { display: flex; flex-direction: column; gap: 10px; }
 
 .cv-section {
   padding: 40px 0;

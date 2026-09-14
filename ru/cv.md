@@ -9,7 +9,10 @@ description: "Резюме Данила Веденина: 3+ года и 4000+ �
 
 <div class="cv-header">
   <h1>Резюме (CV)</h1>
-  <a class="btn" href="/assets/files/CV-Daniel-Viedienin.pdf">📄 Скачать PDF</a>
+  <div class="cv-header__buttons">
+    <a class="btn" href="/assets/files/CV-Daniel-Viedienin-EN.pdf">📄 Скачать PDF (EN)</a>
+    <a class="btn" href="/assets/files/CV-Daniel-Viedienin-UA.pdf">📄 Скачать PDF (UA)</a>
+  </div>
 </div>
 
 <section class="cv-section">
@@ -166,6 +169,7 @@ description: "Резюме Данила Веденина: 3+ года и 4000+ �
   </ul>
 </section>
 
-<div class="btn-row">
-  <a class="btn" href="/assets/files/CV-Daniel-Viedienin.pdf">📄 Скачать PDF</a>
+<div class="btn-stack">
+  <a class="btn" href="/assets/files/CV-Daniel-Viedienin-EN.pdf">📄 Скачать PDF (EN)</a>
+  <a class="btn" href="/assets/files/CV-Daniel-Viedienin-UA.pdf">📄 Скачать PDF (UA)</a>
 </div>

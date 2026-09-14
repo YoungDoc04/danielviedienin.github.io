@@ -9,7 +9,10 @@ description: "Daniel Viedienin's resume: 3+ years and 4,000+ EMS calls, B2B sale
 
 <div class="cv-header">
   <h1>Resume (CV)</h1>
-  <a class="btn" href="/assets/files/CV-Daniel-Viedienin.pdf">📄 Download PDF</a>
+  <div class="cv-header__buttons">
+    <a class="btn" href="/assets/files/CV-Daniel-Viedienin-EN.pdf">📄 Download PDF (EN)</a>
+    <a class="btn" href="/assets/files/CV-Daniel-Viedienin-UA.pdf">📄 Download PDF (UA)</a>
+  </div>
 </div>
 
 <section class="cv-section">
@@ -160,6 +163,7 @@ description: "Daniel Viedienin's resume: 3+ years and 4,000+ EMS calls, B2B sale
   </ul>
 </section>
 
-<div class="btn-row">
-  <a class="btn" href="/assets/files/CV-Daniel-Viedienin.pdf">📄 Download PDF</a>
+<div class="btn-stack">
+  <a class="btn" href="/assets/files/CV-Daniel-Viedienin-EN.pdf">📄 Download PDF (EN)</a>
+  <a class="btn" href="/assets/files/CV-Daniel-Viedienin-UA.pdf">📄 Download PDF (UA)</a>
 </div>
